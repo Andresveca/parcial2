@@ -13,12 +13,12 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="fecha_reserva" class="form-label">{{ __('Fecha Reserva') }}</label>
-            <input type="text" name="fecha_reserva" class="form-control @error('fecha_reserva') is-invalid @enderror" value="{{ old('fecha_reserva', $reserva?->fecha_reserva) }}" id="fecha_reserva" placeholder="Fecha Reserva">
+            <input type="date" name="fecha_reserva" class="form-control @error('fecha_reserva') is-invalid @enderror" value="{{ old('fecha_reserva', $reserva?->fecha_reserva) }}" id="fecha_reserva" placeholder="Fecha Reserva">
             {!! $errors->first('fecha_reserva', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="hora_reserva" class="form-label">{{ __('Hora Reserva') }}</label>
-            <input type="text" name="hora_reserva" class="form-control @error('hora_reserva') is-invalid @enderror" value="{{ old('hora_reserva', $reserva?->hora_reserva) }}" id="hora_reserva" placeholder="Hora Reserva">
+            <input type="time" name="hora_reserva" class="form-control @error('hora_reserva') is-invalid @enderror" value="{{ old('hora_reserva', $reserva?->hora_reserva) }}" id="hora_reserva" placeholder="Hora Reserva">
             {!! $errors->first('hora_reserva', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
