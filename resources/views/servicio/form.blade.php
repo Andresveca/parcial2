@@ -1,29 +1,41 @@
-<div class="row padding-1 p-1">
-    <div class="col-md-12">
-        
-        <div class="form-group mb-2 mb20">
-            <label for="nombre" class="form-label">{{ __('Nombre') }}</label>
-            <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $servicio?->nombre) }}" id="nombre" placeholder="Nombre">
-            {!! $errors->first('nombre', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="descripcion" class="form-label">{{ __('Descripcion') }}</label>
-            <input type="text" name="descripcion" class="form-control @error('descripcion') is-invalid @enderror" value="{{ old('descripcion', $servicio?->descripcion) }}" id="descripcion" placeholder="Descripcion">
-            {!! $errors->first('descripcion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="duracion" class="form-label">{{ __('Duracion') }}</label>
-            <input type="text" name="duracion" class="form-control @error('duracion') is-invalid @enderror" value="{{ old('duracion', $servicio?->duracion) }}" id="duracion" placeholder="Duracion">
-            {!! $errors->first('duracion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="precio" class="form-label">{{ __('Precio') }}</label>
-            <input type="text" name="precio" class="form-control @error('precio') is-invalid @enderror" value="{{ old('precio', $servicio?->precio) }}" id="precio" placeholder="Precio">
-            {!! $errors->first('precio', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
+<div class="container py-4">
+    <div class="card shadow border-0 rounded-4">
+        <div class="card-body bg-light-pink p-4">
+            <h4 class="mb-4 text-center text-pink fw-bold">
+                <i class="bi bi-scissors me-2"></i>Formulario de Servicio
+            </h4>
 
-    </div>
-    <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombre" class="form-label fw-semibold text-pink">Nombre del Servicio</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $servicio?->nombre) }}" placeholder="Ej: Corte de cabello">
+                    {!! $errors->first('nombre', '<div class="invalid-feedback"><strong>:message</strong></div>') !!}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="descripcion" class="form-label fw-semibold text-pink">Descripción</label>
+                    <input type="text" name="descripcion" id="descripcion" class="form-control @error('descripcion') is-invalid @enderror" value="{{ old('descripcion', $servicio?->descripcion) }}" placeholder="Ej: Corte profesional unisex">
+                    {!! $errors->first('descripcion', '<div class="invalid-feedback"><strong>:message</strong></div>') !!}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="duracion" class="form-label fw-semibold text-pink">Duración (minutos)</label>
+                    <input type="text" name="duracion" id="duracion" class="form-control @error('duracion') is-invalid @enderror" value="{{ old('duracion', $servicio?->duracion) }}" placeholder="Ej: 45">
+                    {!! $errors->first('duracion', '<div class="invalid-feedback"><strong>:message</strong></div>') !!}
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="precio" class="form-label fw-semibold text-pink">Precio ($)</label>
+                    <input type="text" name="precio" id="precio" class="form-control @error('precio') is-invalid @enderror" value="{{ old('precio', $servicio?->precio) }}" placeholder="Ej: 35000">
+                    {!! $errors->first('precio', '<div class="invalid-feedback"><strong>:message</strong></div>') !!}
+                </div>
+
+                <div class="col-md-12 text-center mt-3">
+                    <button type="submit" class="btn btn-pink px-4 py-2 rounded-pill shadow-sm">
+                        <i class="bi bi-check-circle me-1"></i>Guardar Servicio
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
